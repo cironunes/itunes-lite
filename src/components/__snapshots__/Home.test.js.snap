@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoutedComponent: Home get albuns when the component mounts 1`] = `
+<div>
+  <form
+    className="App-form"
+  >
+    <h2
+      className="App-subtitle"
+    >
+      Have fun!
+    </h2>
+    <p
+      className="App-form__hint"
+    >
+      Find your favorite albuns and get to know more about them
+    </p>
+    <div
+      className="SearchForm"
+    >
+      <input
+        autoFocus={true}
+        className="App-form__field"
+        defaultValue="Iron Maiden"
+        onChange={[Function]}
+        placeholder="search for albuns"
+        type="search"
+      />
+    </div>
+  </form>
+  <ul
+    className="Album-List"
+  />
+</div>
+`;
+
+exports[`RoutedComponent: Home get albuns when the component mounts 2`] = `
+<div>
+  <form
+    className="App-form"
+  >
+    <h2
+      className="App-subtitle"
+    >
+      Have fun!
+    </h2>
+    <p
+      className="App-form__hint"
+    >
+      Find your favorite albuns and get to know more about them
+    </p>
+    <div
+      className="SearchForm"
+    >
+      <input
+        autoFocus={true}
+        className="App-form__field"
+        defaultValue="Iron Maiden"
+        onChange={[Function]}
+        placeholder="search for albuns"
+        type="search"
+      />
+    </div>
+  </form>
+  <ul
+    className="Album-List"
+  >
+    <li>
+      <Link
+        className="Card undefined"
+        to="/album/400"
+      >
+        <img
+          alt=""
+          className="Media-Cover"
+          src="foo"
+        />
+        <h1
+          className="Media-Text Media-Title"
+        >
+          foo
+        </h1>
+        <h2
+          className="Media-Text Media-Author ellipsis"
+        >
+          foo
+        </h2>
+        <span
+          className="Media-Text Media-Date"
+        >
+          NaN
+        </span>
+      </Link>
+    </li>
+  </ul>
+</div>
+`;
