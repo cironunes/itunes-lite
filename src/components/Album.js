@@ -1,40 +1,51 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-import { AlbumItemExpanded } from "./album/AlbumItemExpanded";
+import { AlbumItemExpanded } from "./album/AlbumItemExpanded"
 import { Track } from "./track/Track";
+import { fetchAlbum } from "../actions/album.actions";
+import Loading from '../components/Loading'
 
 export class Album extends Component {
-  state = {
-    tracks: []
-  };
 
   componentDidMount() {
-    fetch(`https://itunes.apple.com/lookup?entity=song&id=${this.props.match.params.id}`)
-      .then(res => res.json())
-      .then(({ results }) =>
-        this.setState({
-          collection: results[0],
-          tracks: results.slice(1, results.length)
-        })
-      );
+    const { dispatch } = this.props
+    dispatch(fetchAlbum(this.props.match.params.id))
   }
+
   render() {
     return (
       <div>
-        {this.state.collection && (
-          <AlbumItemExpanded
-            {...this.state.collection}
-          />
-        )}
-
-        <ol className="Tracks">
-          {this.state.tracks.map(track => (
-            <li key={track.trackId}>
-              <Track {...track} />
-            </li>
-          ))}
-        </ol>
+        { this.props.isLoading && <Loading /> }
+        { !this.props.isLoading && <div>
+          {this.props.collection && (
+            <AlbumItemExpanded
+              {...this.props.collection}
+            />
+          )}
+          <ol className="Tracks">
+            {this.props.tracks && this.props.tracks.map(track => (
+              <li key={track.trackId}>
+                <Track {...track} />
+              </li>
+            ))}
+          </ol>
+        </div> }
       </div>
     );
   }
 }
+
+Album.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  tracks: PropTypes.array.isRequired
+}
+
+const mapStateToProps = state => {
+  return state.albumReducer
+}
+
+const AlbumComponent = connect(mapStateToProps)(Album)
+
+export default AlbumComponent

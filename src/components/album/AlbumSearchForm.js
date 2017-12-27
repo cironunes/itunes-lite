@@ -11,6 +11,7 @@ export const AlbumSearchForm = props => (
         type="search"
         placeholder="search for albuns"
         onChange={props.handleInputChange}
+        onClick={props.handleInputFocus}
         defaultValue={props.searchTerm}
         autoFocus
       />
@@ -20,5 +21,6 @@ export const AlbumSearchForm = props => (
 
 AlbumSearchForm.propTypes = {
   searchTerm: PropTypes.string.isRequired,
-  handleInputChange: PropTypes.func.isRequired
+  handleInputChange: PropTypes.func.isRequired,
+  handleInputFocus: PropTypes.func.isRequired
 };
