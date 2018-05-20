@@ -7,10 +7,12 @@ import { fetchCollections } from '../actions/home.actions';
 
 export class Home extends Component {
 
+  defaultSearchTerm = 'Ray Charles';
+
   componentDidMount() {
     const { dispatch } = this.props
     if (this.props.collections.length === 0) {
-      dispatch(fetchCollections('Ray Charles'))
+      dispatch(fetchCollections(this.defaultSearchTerm));
     }
   }
 
@@ -20,7 +22,7 @@ export class Home extends Component {
         <AlbumSearchForm
           handleInputChange={this.props.handleInputChange}
           handleInputFocus={this.props.handleInputFocus}
-          searchTerm={this.props.searchTerm} />
+          searchTerm={this.props.searchTerm || this.defaultSearchTerm} />
 
         {this.props.collections &&
           <AlbumList collections={this.props.collections} isLoading={this.props.isLoading} />}
