@@ -28,8 +28,8 @@ Do you want to help? That's awesome. There are some things you can do to help:
 
 ## Contributors
 
-| ![Ciro Nunes](https://avatars0.githubusercontent.com/u/469908?s=80&v=4) |
-| ------------------------- |
-| Ciro Nunes                |
+| ![Ciro Nunes](https://avatars0.githubusercontent.com/u/469908?s=80&v=4) | ![Fernando Souza](https://avatars2.githubusercontent.com/u/502575?s=88&v=4) |
+| ------------------------- | ------------------------- |
+| Ciro Nunes                | Fernando Souza            |
 
 [itunesapi]: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
